@@ -1,0 +1,38 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "soomfon"
+version = "0.1.0"
+description = "Python driver for the SOOMFON Stream Controller SE and compatible Mirabox / Ajazz AKP03 devices"
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.10"
+dependencies = [
+    "hid>=1.0.9",
+    "Pillow>=10.0",
+]
+keywords = ["soomfon", "mirabox", "ajazz", "akp03", "stream-controller", "macro-pad", "hid"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Software Development :: Libraries",
+    "Topic :: System :: Hardware",
+]
+
+[project.scripts]
+soomfon = "soomfon._cli:main"
+
+[project.urls]
+Repository = "https://github.com/richard-polzin/soomfon"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/soomfon"]

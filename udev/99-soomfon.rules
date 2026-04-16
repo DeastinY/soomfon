@@ -1,0 +1,5 @@
+# SOOMFON Stream Controller SE (and compatible Mirabox / Ajazz AKP03 devices)
+# Install:
+#   sudo cp 99-soomfon.rules /etc/udev/rules.d/
+#   sudo udevadm control --reload-rules && sudo udevadm trigger
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1500", ATTRS{idProduct}=="3001", TAG+="uaccess"
